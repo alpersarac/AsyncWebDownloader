@@ -37,7 +37,6 @@ var options = new AppOptions
         "https://www.entaingroup.com/news-insights/latest-news/",
         "https://www.wien.info/en/see-do/sights-from-a-to-z/st-stephens-cathedral-359690",
         "https://www.wien.info/en/now-on/eurovision-song-contest"
-
     ],
     MaxConcurrency=5,
     TimeoutSeconds=20,
