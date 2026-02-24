@@ -1,4 +1,5 @@
 ﻿
+using System.Net;
 using AsyncWebDownloader.Options;
 using AsyncWebDownloader.Services;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,11 +18,8 @@ static IAsyncPolicy<HttpResponseMessage> BuildCircuitBreakerPolicy()
 {
     return Policy<HttpResponseMessage>
         .Handle<HttpRequestException>()
-        .OrResult(r => (int)r.StatusCode >= 500)
-        .CircuitBreakerAsync(
-            handledEventsAllowedBeforeBreaking: 3,
-            durationOfBreak: TimeSpan.FromSeconds(10)
-        );
+        .OrResult(r => r.StatusCode >= HttpStatusCode.InternalServerError)
+        .CircuitBreakerAsync(3, TimeSpan.FromSeconds(10));
 }
 var options = new AppOptions
 {
