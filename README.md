@@ -1,6 +1,6 @@
 
 
-# Async Web Downloader
+# Async Web Page Downloader – Entain Technical Assessment
 ![24 02 2026_20 34 53_REC](https://github.com/user-attachments/assets/7ba5c76d-5f3b-4108-b16d-d3da387af069)
 
 
